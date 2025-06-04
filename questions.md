@@ -38,3 +38,14 @@ Write a sample ansible playbook to install git.
 time it took
 13) How do you ensure zero-downtime deployments?
 14) How do you manage environment differences between staging and production?
+
+RollBack Strategies in DevOps
+Microservice Architecture
+For each service there is separate dockerfile.
+Main Pipeline  Flow:  Docker Image - Docker Hub - Saving the current manifest file in archive artifacts - Updating the Kubernetes Manifest file with the latest docker image (GitHub Repo) - Flux CD - is then doing the deployment.
+Images I have published in docker hub : image previous to the latest one - Update manifest file with the image previous to the latest one.
+Second Pipeline (Rollback Pipeline ): Service name should be an input 
+Query the image previous image from the latest one - image previous to the latest one - Update manifest file with the image previous to the latest one.
+Fetch the archive artifacts file - Update manifest file
+1) jq should be installed on the Jenkins agent where the pipeline is getting executed.
+2) Before updating the Kubernetes Mainfest file in Main Pipeline  Flow , can we store the image in a file and store it in archive artifacts in jenkins, we can again update the  mainfest file image tag with the one that we have stored.
