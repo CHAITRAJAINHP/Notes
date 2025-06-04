@@ -44,6 +44,20 @@ Microservice Architecture
 For each service there is separate dockerfile.
 Main Pipeline  Flow:  Docker Image - Docker Hub - Saving the current manifest file in archive artifacts - Updating the Kubernetes Manifest file with the latest docker image (GitHub Repo) - Flux CD - is then doing the deployment.
 Images I have published in docker hub : image previous to the latest one - Update manifest file with the image previous to the latest one.
+
+
+1) How do you check open ports in a Linux system.
+2) What are the benefits of using firewall.
+3) Write a simple terraform script to create a VM or ec2 or whatever cloud you are comfortable with.
+4) Write manifest file pod.yaml for single container (database service)
+5) Difference between pod and deployment, write deployment.yaml for the database-service creating 3 replicas.
+6) Difference between nodeport, clusterip and load balancers, where we will use each service.
+7) What is Helm, have you worked on helm, explain components of helm.
+8) Can you write a dockerfile for nodejs application.
+9) What is a base image in dockerfile, how will you decide base image for any application.
+10) What is liveness and readiness probe.
+11) Difference between deployment, replicaset and replica controller.
+12) How you do port forwarding in Docker and Kubernetes.
 Second Pipeline (Rollback Pipeline ): Service name should be an input 
 Query the image previous image from the latest one - image previous to the latest one - Update manifest file with the image previous to the latest one.
 Fetch the archive artifacts file - Update manifest file
